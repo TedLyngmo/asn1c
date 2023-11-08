@@ -816,7 +816,7 @@ asn_INTEGER2long(const INTEGER_t *iptr, long *lptr) {
 
 	/* Conversion engine */
 	for(; b < end; b++)
-		l = (l << 8) | *b;
+		l = (long)(((unsigned long)l << 8) | *b);
 
 	*lptr = l;
 	return 0;
